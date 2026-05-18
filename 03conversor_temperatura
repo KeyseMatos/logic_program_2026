@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Crie um programa que leia uma temperatura em
+Celsius e converta para Fahrenheit e Kelvin.
+→ Leia a temperatura em Celsius ( float )
+→ Calcule Fahrenheit: F = C × 1.8 + 32
+→ Calcule Kelvin: K = C + 273.15
+→ Exiba os três valores formatados
+💡 DICAS
+Use float para precisão decimal
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    float celsius, fahrenheit, kelvin;
+    
+    printf("Digite a Temperatura em Celsius: ");
+    scanf("%f", &celsius);
+    
+    fahrenheit = celsius * 1.8 + 32;
+    kelvin = celsius + 273.15;
+    
+    printf("Temperatura em Celsius: %2.f\n", celsius);
+    printf("Temperatura em Fahrenheit: %2.f\n", fahrenheit);
+    printf("Temperatura em Kelvin: %2.f", kelvin);
+ 
+    return 0;
+}
