@@ -1,0 +1,51 @@
+/******************************************************************************
+
+Crie um jogo onde o programa escolhe um número
+secreto e o usuário tenta adivinhar com dicas.
+Defina o número secreto no código: int secreto
+= 42
+→O usuário chuta um número 
+→O programa diz: "Muito alto!", "Muito baixo!" ou
+"Acertou!"
+→O loop continua até acertar →
+Extra: conte quantas tentativas foram necessárias
+
+
+*******************************************************************************/
+#include <stdio.h>
+
+
+int main()
+{
+    int secreto = 42;
+    int chute;
+    int tentativas = 0;
+    
+    printf("======JOGO NÚMERO SECRETO======\n");
+
+    
+    do{
+        
+        printf("Tente acertar o número secreto: ");
+        scanf("%d", &chute);
+        
+        tentativas++;
+        
+        if(chute > secreto){
+            
+            printf("Muito alto!\n");
+           
+        }else if(chute < secreto){
+            
+            printf("Muito baixo!\n");
+           
+        }else{
+            
+            printf("Acertou!\n");
+        }        
+    }while(chute != 42);
+    
+     printf("\nVocê acertou em %d tentativas!\n", tentativas);
+    
+    return 0;
+}
