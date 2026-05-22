@@ -1,0 +1,1070 @@
+
+<!-- saved from url=(0060)file:///C:/Users/aluno.senai/Downloads/lista-atividades.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Exercícios — Linguagem C</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        /* ── HEADER ── */
+        .page-header {
+            background: #1a3d5c;
+            display: flex;
+            align-items: stretch;
+            padding-right: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .senai-badge {
+            background: white;
+            padding: 6px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 2px;
+            flex-shrink: 0;
+            min-width: 155px;
+        }
+
+        .badge-nossa      { background: #f5e642; color: #1a1a1a; font-size: 9px;  padding: 1px 6px; font-weight: bold; }
+        .badge-historia   { color: #1a1a1a;      font-size: 9px;  padding: 0 2px; }
+        .badge-transforma { color: #1a1a1a;      font-size: 15px; font-weight: 900; line-height: 1.1; }
+        .badge-muitas     { background: #4db6ac; color: white;    font-size: 9px;  padding: 1px 6px; }
+        .badge-historias  { background: #c6e03a; color: #1a1a1a;  font-size: 9px;  padding: 1px 6px; }
+
+        .header-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 20px;
+        }
+
+        .header-title {
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .header-sub {
+            color: #c8d400;
+            font-size: 12px;
+            margin-top: 3px;
+            letter-spacing: 1px;
+        }
+
+        .header-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .total-badge {
+            background: #c8d400;
+            color: #1a3d5c;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* ── FOOTER ── */
+        .page-footer {
+            background: #1a3d5c;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 24px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .footer-accent { position: absolute; bottom: 0; left: 0; width: 300px; height: 8px; background: #c8d400; }
+        .footer-senai  { color: white; font-size: 18px; font-weight: bold; font-style: italic; letter-spacing: 2px; }
+
+        /* ── CONTAINER ── */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        /* ── INTRO BANNER ── */
+        .intro-banner {
+            background: white;
+            border-left: 5px solid #1a3d5c;
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .intro-icon { font-size: 36px; }
+
+        .intro-text h2 { color: #1a3d5c; font-size: 16px; margin-bottom: 4px; }
+        .intro-text p  { font-size: 13px; color: #555; line-height: 1.6; }
+
+        /* ── LEGENDA ── */
+        .legend {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* ── SECTION ── */
+        .section {
+            margin-bottom: 36px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #1a3d5c;
+        }
+
+        .section-number {
+            background: #1a3d5c;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .section-title {
+            color: #1a3d5c;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .section-desc {
+            color: #777;
+            font-size: 12px;
+            margin-left: auto;
+        }
+
+        /* ── GRID ── */
+        .exercises-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+
+        /* ── EXERCISE CARD ── */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            padding: 12px 16px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #f0f2f5;
+        }
+
+        .card-number {
+            background: #1a3d5c;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1a3d5c;
+            flex: 1;
+        }
+
+        /* ── DIFFICULTY BADGES ── */
+        .badge {
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .basico    { background: #d4edda; color: #155724; }
+        .medio     { background: #fff3cd; color: #856404; }
+        .avancado  { background: #fde8d8; color: #7d3c00; }
+        .desafio   { background: #f8d7da; color: #721c24; }
+
+        /* ── CARD BODY ── */
+        .card-body { padding: 12px 16px; }
+
+        .enunciado {
+            font-size: 12.5px;
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .requirements {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .requirements li {
+            font-size: 12px;
+            color: #555;
+            padding: 2px 0 2px 14px;
+            position: relative;
+        }
+
+        .requirements li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #1a3d5c;
+            font-size: 11px;
+        }
+
+        /* ── TIPS ── */
+        .tip-box {
+            background: #e8f4fd;
+            border-left: 3px solid #1a3d5c;
+            padding: 7px 10px;
+            border-radius: 0 4px 4px 0;
+            margin-top: 8px;
+        }
+
+        .tip-box p {
+            font-size: 11px;
+            color: #1a3d5c;
+            line-height: 1.5;
+        }
+
+        .tip-box p + p { margin-top: 4px; }
+
+        .tip-label {
+            font-size: 10px;
+            font-weight: bold;
+            color: #1a3d5c;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        /* ── CONCEPTS ── */
+        .concepts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 10px;
+        }
+
+        .concept-tag {
+            background: #f0f4f8;
+            color: #1a3d5c;
+            font-size: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid #d0dce8;
+        }
+
+        /* ── CODE HINT ── */
+        code {
+            background: #e8e8e8;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-family: Consolas, monospace;
+            font-size: 11px;
+            color: #1a3d5c;
+        }
+
+        /* ── PRINT ── */
+        .print-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #1a3d5c;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 13px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: background 0.2s;
+            z-index: 999;
+        }
+
+        .print-btn:hover { background: #2a5a8c; }
+
+        @media print {
+            .print-btn   { display: none; }
+            .page-header { position: static; }
+            .card:hover  { transform: none; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header class="page-header">
+    <div class="senai-badge">
+        <span class="badge-nossa">Nossa</span>
+        <span class="badge-historia">história</span>
+        <span class="badge-transforma">TRANSFORMA</span>
+        <span class="badge-muitas">muitas</span>
+        <span class="badge-historias">histórias</span>
+    </div>
+    <div class="header-info">
+        <span class="header-title">Lista de Exercícios — Linguagem C</span>
+        <span class="header-sub">Lógica de Programação &nbsp;|&nbsp; Curso Técnico em Informática &nbsp;|&nbsp; 2026</span>
+    </div>
+    <div class="header-right">
+        <span class="total-badge">20 Exercícios</span>
+    </div>
+</header>
+
+<!-- ── CONTAINER ── -->
+<div class="container">
+
+    <!-- INTRO -->
+    <div class="intro-banner">
+        <div class="intro-icon">📝</div>
+        <div class="intro-text">
+            <h2>Atividades para Praticar em Casa</h2>
+            <p>Exercícios organizados por nível de dificuldade, do básico até matrizes. Pratique no <strong>OnlineGDB</strong> (onlinegdb.com) ou no <strong>VS Code</strong> com MinGW. Tente resolver sozinho antes de consultar materiais!</p>
+        </div>
+    </div>
+
+    <!-- LEGENDA -->
+    <div class="legend">
+        <div class="legend-item">
+            <div class="legend-dot" style="background:#28a745;"></div>
+            <span>Básico — variáveis, tipos, printf/scanf</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background:#ffc107;"></div>
+            <span>Médio — condicionais e repetição</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background:#fd7e14;"></div>
+            <span>Avançado — vetores</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-dot" style="background:#dc3545;"></div>
+            <span>Desafio — matrizes</span>
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         NÍVEL 1 — BÁSICO
+    ════════════════════════════════ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">1</div>
+            <span class="section-title">Variáveis, Tipos de Dados e I/O</span>
+            <span class="section-desc">printf • scanf • int • float • char</span>
+        </div>
+        <div class="exercises-grid">
+
+            <!-- EX 01 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">01</div>
+                    <span class="card-title">Apresentação Pessoal</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia o nome, idade e cidade do usuário e exiba uma mensagem de apresentação formatada.</p>
+                    <ul class="requirements">
+                        <li>Leia o nome completo com espaço</li>
+                        <li>Leia a idade como inteiro</li>
+                        <li>Leia a cidade como string</li>
+                        <li>Exiba: <em>"Olá! Meu nome é [nome], tenho [idade] anos e sou de [cidade]."</em></li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>char nome[50]</code> para strings</p>
+                        <p>Para ler strings com espaço: <code>scanf(" %[^\n]", nome)</code></p>
+                        <p>Use <code>%s</code> para exibir strings no printf</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">char[]</span>
+                        <span class="concept-tag">int</span>
+                        <span class="concept-tag">printf</span>
+                        <span class="concept-tag">scanf</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 02 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">02</div>
+                    <span class="card-title">Calculadora de IMC</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia o peso (kg) e a altura (m) de uma pessoa, calcule o IMC e exiba o resultado.</p>
+                    <ul class="requirements">
+                        <li>Leia peso e altura como <code>float</code></li>
+                        <li>Calcule: IMC = peso / (altura × altura)</li>
+                        <li>Exiba o IMC com 2 casas decimais</li>
+                        <li>Exiba a classificação: Abaixo do peso (&lt;18.5), Normal (18.5–24.9), Sobrepeso (25–29.9), Obesidade (≥30)</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>%.2f</code> para exibir 2 casas decimais</p>
+                        <p>Lembre dos operadores relacionais: <code>&gt;=</code> e <code>&lt;</code></p>
+                        <p>Use <code>float</code> ou <code>double</code> para os cálculos</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">float</span>
+                        <span class="concept-tag">operadores</span>
+                        <span class="concept-tag">%.2f</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 03 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">03</div>
+                    <span class="card-title">Conversor de Temperatura</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia uma temperatura em Celsius e converta para Fahrenheit e Kelvin.</p>
+                    <ul class="requirements">
+                        <li>Leia a temperatura em Celsius (<code>float</code>)</li>
+                        <li>Calcule Fahrenheit: <em>F = C × 1.8 + 32</em></li>
+                        <li>Calcule Kelvin: <em>K = C + 273.15</em></li>
+                        <li>Exiba os três valores formatados</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>float</code> para precisão decimal</p>
+                        <p>Constantes decimais em C precisam de ponto: <code>1.8</code>, <code>273.15</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">float</span>
+                        <span class="concept-tag">aritmética</span>
+                        <span class="concept-tag">printf</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 04 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">04</div>
+                    <span class="card-title">Área de Figuras Geométricas</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia as medidas de uma figura e calcule sua área.</p>
+                    <ul class="requirements">
+                        <li>Exiba um menu: 1-Círculo, 2-Retângulo, 3-Triângulo</li>
+                        <li>Leia a opção e os dados necessários</li>
+                        <li>Calcule e exiba a área correspondente</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>#define PI 3.14159</code> para a constante PI</p>
+                        <p>Círculo: <code>PI * r * r</code></p>
+                        <p>Retângulo: <code>base * altura</code></p>
+                        <p>Triângulo: <code>(base * altura) / 2</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">#define</span>
+                        <span class="concept-tag">const</span>
+                        <span class="concept-tag">float</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         NÍVEL 2 — CONDICIONAIS
+    ════════════════════════════════ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">2</div>
+            <span class="section-title">Estruturas Condicionais</span>
+            <span class="section-desc">if • else if • else • operadores lógicos</span>
+        </div>
+        <div class="exercises-grid">
+
+            <!-- EX 05 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">05</div>
+                    <span class="card-title">Classificador de Notas</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia uma nota (0 a 10) e exiba a classificação correspondente.</p>
+                    <ul class="requirements">
+                        <li>9 a 10 → <strong>Excelente</strong></li>
+                        <li>7 a 8 → <strong>Bom</strong></li>
+                        <li>5 a 6 → <strong>Regular</strong></li>
+                        <li>0 a 4 → <strong>Insuficiente</strong></li>
+                        <li>Fora de 0–10 → <strong>Nota inválida</strong></li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Verifique a nota inválida <strong>primeiro</strong>, antes dos outros if</p>
+                        <p>Use <code>&amp;&amp;</code> para checar intervalo: <code>nota &gt;= 7 &amp;&amp; nota &lt;= 8</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">if/else if</span>
+                        <span class="concept-tag">&amp;&amp;</span>
+                        <span class="concept-tag">operadores relacionais</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 06 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">06</div>
+                    <span class="card-title">Ano Bissexto</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia um ano e informe se ele é ou não bissexto.</p>
+                    <ul class="requirements">
+                        <li>Um ano é bissexto se for divisível por 4</li>
+                        <li>Exceto anos centenários (divisíveis por 100)</li>
+                        <li>A menos que também sejam divisíveis por 400</li>
+                        <li>Exemplos: 2000 ✅ | 1900 ❌ | 2024 ✅</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use o operador módulo <code>%</code> para checar divisibilidade</p>
+                        <p>Ex: <code>ano % 4 == 0</code> verifica se é divisível por 4</p>
+                        <p>Combine com <code>&amp;&amp;</code> e <code>||</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">%</span>
+                        <span class="concept-tag">&amp;&amp;</span>
+                        <span class="concept-tag">||</span>
+                        <span class="concept-tag">int</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 07 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">07</div>
+                    <span class="card-title">Maior entre Três Números</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia três números inteiros e exiba qual é o maior, o do meio e o menor.</p>
+                    <ul class="requirements">
+                        <li>Leia três números: A, B e C</li>
+                        <li>Exiba o maior, o intermediário e o menor</li>
+                        <li>Trate o caso em que dois ou três números são iguais</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>if/else if/else</code> aninhados</p>
+                        <p>Pense em todos os casos possíveis antes de codificar</p>
+                        <p>Teste com: (3,1,2), (5,5,3), (2,2,2)</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">if aninhado</span>
+                        <span class="concept-tag">operadores relacionais</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 08 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">08</div>
+                    <span class="card-title">Classificador de Triângulo</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia três lados e determine se formam um triângulo válido e, se sim, qual o tipo.</p>
+                    <ul class="requirements">
+                        <li>Verifique se é triângulo válido: cada lado deve ser menor que a soma dos outros dois</li>
+                        <li>Se válido: Equilátero (3 lados iguais), Isósceles (2 iguais) ou Escaleno (todos diferentes)</li>
+                        <li>Se inválido: exibir mensagem de erro</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Valide primeiro com <code>&amp;&amp;</code>: <code>a+b&gt;c &amp;&amp; a+c&gt;b &amp;&amp; b+c&gt;a</code></p>
+                        <p>Use <code>float</code> para aceitar medidas decimais</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">if/else</span>
+                        <span class="concept-tag">&amp;&amp;</span>
+                        <span class="concept-tag">float</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         NÍVEL 3 — REPETIÇÃO
+    ════════════════════════════════ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">3</div>
+            <span class="section-title">Estruturas de Repetição</span>
+            <span class="section-desc">for • while • do-while</span>
+        </div>
+        <div class="exercises-grid">
+
+            <!-- EX 09 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">09</div>
+                    <span class="card-title">Soma dos N Primeiros</span>
+                    <span class="badge basico">Básico</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia um número N e calcule a soma de todos os inteiros de 1 até N.</p>
+                    <ul class="requirements">
+                        <li>Leia N como inteiro positivo</li>
+                        <li>Use <code>for</code> para somar 1 + 2 + 3 + ... + N</li>
+                        <li>Exiba o resultado</li>
+                        <li><strong>Extra:</strong> exiba também a média dos valores</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Crie uma variável <code>soma = 0</code> antes do loop</p>
+                        <p>Dentro do for, acumule: <code>soma = soma + i</code> ou <code>soma += i</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">for</span>
+                        <span class="concept-tag">acumulador</span>
+                        <span class="concept-tag">int</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 10 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">10</div>
+                    <span class="card-title">Fatorial</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia um número inteiro N e calcule o fatorial de N (N!).</p>
+                    <ul class="requirements">
+                        <li>Leia N (inteiro não negativo)</li>
+                        <li>Calcule: 5! = 5 × 4 × 3 × 2 × 1 = 120</li>
+                        <li>Trate o caso especial: 0! = 1</li>
+                        <li>Exiba o resultado</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Inicialize <code>fatorial = 1</code> (não 0!)</p>
+                        <p>Use <code>long int</code> para números maiores, pois fatorial cresce rápido</p>
+                        <p>Teste com: 0, 1, 5, 10</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">for</span>
+                        <span class="concept-tag">multiplicador</span>
+                        <span class="concept-tag">long int</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 11 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">11</div>
+                    <span class="card-title">Adivinhe o Número</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um jogo onde o programa escolhe um número secreto e o usuário tenta adivinhar com dicas.</p>
+                    <ul class="requirements">
+                        <li>Defina o número secreto no código: <code>int secreto = 42</code></li>
+                        <li>O usuário chuta um número</li>
+                        <li>O programa diz: "Muito alto!", "Muito baixo!" ou "Acertou!"</li>
+                        <li>O loop continua até acertar</li>
+                        <li><strong>Extra:</strong> conte quantas tentativas foram necessárias</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>while(chute != secreto)</code> para repetir</p>
+                        <p>Crie um contador de tentativas: <code>tentativas++</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">while</span>
+                        <span class="concept-tag">contador</span>
+                        <span class="concept-tag">if/else</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 12 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">12</div>
+                    <span class="card-title">Menu Interativo</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um menu que se repete até o usuário escolher sair, realizando operações matemáticas.</p>
+                    <ul class="requirements">
+                        <li>1 — Calcular quadrado de um número</li>
+                        <li>2 — Verificar se número é par ou ímpar</li>
+                        <li>3 — Calcular potência (base ^ expoente)</li>
+                        <li>4 — Sair</li>
+                        <li>O menu deve reaparecer após cada operação</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>do { } while(opcao != 4)</code> para garantir que o menu aparece ao menos uma vez</p>
+                        <p>Para potência, use um <code>for</code> dentro do case</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">do-while</span>
+                        <span class="concept-tag">menu</span>
+                        <span class="concept-tag">if/else</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         NÍVEL 4 — VETORES
+    ════════════════════════════════ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">4</div>
+            <span class="section-title">Vetores</span>
+            <span class="section-desc">arrays unidimensionais • índices • percorrimento</span>
+        </div>
+        <div class="exercises-grid">
+
+            <!-- EX 13 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">13</div>
+                    <span class="card-title">Estatísticas do Vetor</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia 6 números em um vetor e calcule estatísticas sobre eles.</p>
+                    <ul class="requirements">
+                        <li>Leia 6 valores com <code>scanf</code> dentro de um <code>for</code></li>
+                        <li>Calcule e exiba: soma, média, menor e maior valor</li>
+                        <li>Exiba quais valores estão acima da média</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Inicialize <code>maior = vetor[0]</code> e <code>menor = vetor[0]</code> antes do loop</p>
+                        <p>Faça dois loops: um para leitura e cálculo, outro para exibir acima da média</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">float v[6]</span>
+                        <span class="concept-tag">for</span>
+                        <span class="concept-tag">min/max</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 14 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">14</div>
+                    <span class="card-title">Inverter um Vetor</span>
+                    <span class="badge medio">Médio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia um vetor com 5 elementos, exiba o original e depois exiba na ordem inversa.</p>
+                    <ul class="requirements">
+                        <li>Leia 5 inteiros para o vetor</li>
+                        <li>Exiba os elementos na ordem original</li>
+                        <li>Exiba os elementos na ordem inversa</li>
+                        <li><strong>Extra:</strong> inverta de verdade, trocando os elementos dentro do vetor</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Para exibir invertido sem alterar: <code>for(i = 4; i &gt;= 0; i--)</code></p>
+                        <p>Para inverter de verdade: troque <code>v[0]</code> com <code>v[4]</code>, <code>v[1]</code> com <code>v[3]</code> usando uma variável auxiliar</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">int v[5]</span>
+                        <span class="concept-tag">for reverso</span>
+                        <span class="concept-tag">troca de valores</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 15 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">15</div>
+                    <span class="card-title">Busca no Vetor</span>
+                    <span class="badge avancado">Avançado</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia um vetor com 8 números e permita que o usuário busque um valor informando se foi encontrado e em qual posição.</p>
+                    <ul class="requirements">
+                        <li>Preencha o vetor com 8 inteiros</li>
+                        <li>Leia um valor a ser buscado</li>
+                        <li>Informe se foi encontrado e em qual índice</li>
+                        <li>Se não encontrado, exiba mensagem de erro</li>
+                        <li><strong>Extra:</strong> conte quantas vezes o valor aparece</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use uma variável <code>encontrado = 0</code> como flag</p>
+                        <p>Se achar, mude para <code>encontrado = 1</code> e guarde o índice</p>
+                        <p>Verifique o flag <strong>após</strong> o loop</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">int v[8]</span>
+                        <span class="concept-tag">flag</span>
+                        <span class="concept-tag">busca linear</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 16 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">16</div>
+                    <span class="card-title">Classificar Valores</span>
+                    <span class="badge avancado">Avançado</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia 10 inteiros em um vetor e conte e exiba separadamente os positivos, negativos e zeros.</p>
+                    <ul class="requirements">
+                        <li>Leia 10 inteiros</li>
+                        <li>Conte quantos são positivos, negativos e zero</li>
+                        <li>Exiba a soma apenas dos positivos</li>
+                        <li>Exiba a média apenas dos negativos</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use três contadores: <code>cPos = 0</code>, <code>cNeg = 0</code>, <code>cZero = 0</code></p>
+                        <p>Use <code>if/else if/else</code> dentro do <code>for</code> para classificar cada elemento</p>
+                        <p>Cuidado ao calcular média: verifique se <code>cNeg &gt; 0</code> antes de dividir</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">int v[10]</span>
+                        <span class="concept-tag">contadores</span>
+                        <span class="concept-tag">if dentro do for</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ════════════════════════════════
+         NÍVEL 5 — MATRIZES
+    ════════════════════════════════ -->
+    <div class="section">
+        <div class="section-header">
+            <div class="section-number">5</div>
+            <span class="section-title">Matrizes</span>
+            <span class="section-desc">arrays bidimensionais • for aninhado • linhas e colunas</span>
+        </div>
+        <div class="exercises-grid">
+
+            <!-- EX 17 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">17</div>
+                    <span class="card-title">Preencher e Exibir Matriz</span>
+                    <span class="badge avancado">Avançado</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um programa que leia e exiba uma matriz 3x3 de inteiros de forma formatada.</p>
+                    <ul class="requirements">
+                        <li>Leia os 9 valores com <code>for</code> aninhado</li>
+                        <li>Exiba a matriz formatada com linhas e colunas visíveis</li>
+                        <li>Calcule e exiba a soma de todos os elementos</li>
+                        <li><strong>Extra:</strong> exiba a soma de cada linha separadamente</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Declare: <code>int mat[3][3]</code></p>
+                        <p>Use <code>\t</code> no printf para alinhar as colunas</p>
+                        <p>Use <code>\n</code> ao final de cada linha (após o for interno)</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">int m[3][3]</span>
+                        <span class="concept-tag">for aninhado</span>
+                        <span class="concept-tag">\t</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 18 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">18</div>
+                    <span class="card-title">Diagonal Principal</span>
+                    <span class="badge avancado">Avançado</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia uma matriz 4x4 e calcule a soma dos elementos da diagonal principal.</p>
+                    <ul class="requirements">
+                        <li>Leia uma matriz 4x4 de inteiros</li>
+                        <li>Exiba a matriz completa</li>
+                        <li>Destaque visualmente os elementos da diagonal</li>
+                        <li>Exiba a soma da diagonal principal</li>
+                        <li><strong>Extra:</strong> calcule também a diagonal secundária</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>A diagonal principal é onde <code>i == j</code></p>
+                        <p>A diagonal secundária é onde <code>i + j == n - 1</code> (n = tamanho)</p>
+                        <p>Basta um <code>for</code> simples para percorrer a diagonal: <code>soma += mat[i][i]</code></p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">int m[4][4]</span>
+                        <span class="concept-tag">i == j</span>
+                        <span class="concept-tag">diagonal</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 19 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">19</div>
+                    <span class="card-title">Soma de Duas Matrizes</span>
+                    <span class="badge avancado">Avançado</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Leia duas matrizes 2x2 e calcule e exiba a matriz resultante da soma entre elas.</p>
+                    <ul class="requirements">
+                        <li>Leia a matriz A (2x2)</li>
+                        <li>Leia a matriz B (2x2)</li>
+                        <li>Calcule a matriz C = A + B, onde <code>C[i][j] = A[i][j] + B[i][j]</code></li>
+                        <li>Exiba as três matrizes formatadas</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Declare três matrizes: <code>int A[2][2], B[2][2], C[2][2]</code></p>
+                        <p>Use for aninhado para cada operação: leitura de A, leitura de B, cálculo de C e exibição</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">múltiplas matrizes</span>
+                        <span class="concept-tag">for aninhado</span>
+                        <span class="concept-tag">C[i][j]</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EX 20 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-number">20</div>
+                    <span class="card-title">Sistema de Alunos — Desafio Final 🏆</span>
+                    <span class="badge desafio">Desafio</span>
+                </div>
+                <div class="card-body">
+                    <p class="enunciado">Crie um sistema completo de notas para 4 alunos com 3 disciplinas cada, organizado com funções.</p>
+                    <ul class="requirements">
+                        <li>Leia todas as notas em uma matriz 4x3</li>
+                        <li>Calcule a média de cada aluno (por linha)</li>
+                        <li>Exiba se cada aluno está Aprovado (≥6) ou Reprovado</li>
+                        <li>Encontre a maior e a menor nota de toda a matriz</li>
+                        <li>Calcule a média geral da turma</li>
+                        <li><strong>Extra:</strong> organize tudo em funções separadas</li>
+                    </ul>
+                    <div class="tip-box">
+                        <p class="tip-label">💡 Dicas</p>
+                        <p>Use <code>#define ALUNOS 4</code> e <code>#define DISC 3</code> para facilitar</p>
+                        <p>Crie uma função para cada tarefa: <code>lerNotas()</code>, <code>exibirMatriz()</code>, <code>calcularMedias()</code></p>
+                        <p>Inicialize <code>maior = notas[0][0]</code> antes de buscar o maior</p>
+                    </div>
+                    <div class="concepts">
+                        <span class="concept-tag">float m[4][3]</span>
+                        <span class="concept-tag">funções</span>
+                        <span class="concept-tag">#define</span>
+                        <span class="concept-tag">for aninhado</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-footer">
+    <div class="footer-accent"></div>
+    <span class="footer-senai">SENAI</span>
+</footer>
+
+<!-- BOTÃO IMPRIMIR -->
+<button class="print-btn" onclick="window.print()">🖨️ Imprimir / Salvar PDF</button>
+
+
+</body></html>
