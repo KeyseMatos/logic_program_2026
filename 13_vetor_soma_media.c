@@ -16,22 +16,54 @@ min/max
 int main()
 {
     int numero[6];
+    int soma = 0;
+    int maior, menor;
+    float media;
     
-    for(int i = 0; numero <= 6; i++){
+    for(int i = 0; i < 6; i++){
         
         printf("Digite um número: ");
-        scanf("%d", &numero);
+        scanf("%d", &numero[i]);
         
-        soma += numero;
+        soma += numero[i];
         
+        // PRIMEIRO NÚMERO
+        if(i == 0){
+            
+            maior = numero[i];
+            menor = numero[i];
+        }
         
-        
-        
+        // MAIOR
+        if(numero[i] > maior){
+       
+            maior = numero[i];
+       
+        }
+   
+        // MENOR
+        if(numero[i] < menor){
+       
+            menor = numero[i];
+       
+        }
     }
     
-    media = soma / 6;
-    printf("A soma dos números é: %d\n", soma);
+    media = soma / 6.0;
     
+    printf("\nSoma: %d\n", soma);
+    printf("Média: %.2f\n", media);
+    printf("Maior número: %d\n", maior);
+    printf("Menor número: %d\n", menor);
     
+    printf("\nNúmeros acima da média:\n");
+    
+    for(int i = 0; i < 6; i++){
+        
+        if(numero[i] > media){
+            printf("%d ", numero[i]);
+        }
+    }
+
     return 0;
 }
